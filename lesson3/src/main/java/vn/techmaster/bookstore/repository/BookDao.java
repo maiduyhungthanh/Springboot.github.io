@@ -52,17 +52,7 @@ public class BookDao extends Dao<Book> {
     } else {
       collections.add(t);
     }
-    // int count = 0;
-    // for (Book book : collections) {
-    //   if (book.getId()==t.getId()){
-    //     book = new Book(t.getId(),t.getTitle(),t.getDescription());
-    //   }else{
-    //     count++;
-    //   }
-    // }
-    // if (count == collections.size()){
-    //   collections.add(t);
-    // }
+   
   }
 
   @Override
