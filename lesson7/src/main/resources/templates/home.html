@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+</head>
+<body>
+    <h1>DANH SÁCH NHÂN VIÊN</h1>
+    <a href="/employee">Trang đầu</a>
+    <a href="/employee/add">Thêm mới</a>
+    <a href="/employee/search">Tìm kiếm</a><br>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>FirtName</th>
+            <th>LastName</th>
+            <th>FullName</th>
+            <th>EmailId</th>
+            <th>Passport</th>
+            <th>Thông tin</th>
+           
+        </thead>
+
+        <tbody>
+            <tr th:each="employee, iStart : ${employees}">
+                <td th:text="${iStart.index+1}"></td>
+                <td th:text="${employee.firstName}"></td>
+                <td th:text="${employee.lastName}"></td>
+                <td th:text="${employee.fullName}"></td>
+                <td th:text="${employee.emailId}"></td>
+                <td th:text="${employee.passportNumber}"></td>
+                <td><button><a th:href="@{/employee/{id}(id=${employee.id})}">Chi tiết</a></button></td>
+            
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
