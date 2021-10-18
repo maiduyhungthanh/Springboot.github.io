@@ -236,16 +236,117 @@ public class BookController {
 Trong thư mục [static/templates] tạo file [allbooks.html](src/main/resources/templates/allbooks.html)
 
 Đoạn code này duyệt qua các đối tượng Book trong mảng để hiển thị
+home.html
 ```html
-<ul>
-  <li th:each="book: ${books}">
-    <a th:href="@{/book/{id}(id=${book.id})}"><strong th:text="${book.title}"></strong></a><br>
-    <p th:text="${book.description}"></p>
-  </li>
-</ul>
-```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+</head>
+<body>
+    <h1>DANH SÁCH NHÂN VIÊN</h1>
+    <a href="/employee">Trang đầu</a>
+    <a href="/employee/add">Thêm mới</a>
+    <a href="/employee/search">Tìm kiếm</a><br>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>FirtName</th>
+            <th>LastName</th>
+            <th>FullName</th>
+            <th>EmailId</th>
+            <th>Passport</th>
+            <th>Thông tin</th>
+           
+        </thead>
 
-### 9: Biên dịch và vào http://localhost:8080/book
+        <tbody>
+            <tr th:each="employee, iStart : ${employees}">
+                <td th:text="${iStart.index+1}"></td>
+                <td th:text="${employee.firstName}"></td>
+                <td th:text="${employee.lastName}"></td>
+                <td th:text="${employee.fullName}"></td>
+                <td th:text="${employee.emailId}"></td>
+                <td th:text="${employee.passportNumber}"></td>
+                <td><button><a th:href="@{/employee/{id}(id=${employee.id})}">Chi tiết</a></button></td>
+            
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+```
+add.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD</title>
+</head>
+<body>
+    <form action="#" th:action="@{/employee/save}" th:object="${employee}" method="post">
+        <input type="hidden" placeholder="Id" th:field="*{id}"><br>
+        <input type="text" placeholder="First Name" required th:field="*{firstName}"/><br><br>
+        <input type="text" placeholder="Last Name" required th:field="*{lastName}"/><br><br>
+        <input type="text" placeholder="EmailId" required th:field="*{emailId}"/><br><br>
+        <input type="text" placeholder="Passport Number" required th:field="*{passportNumber}"/><br><br>
+        <button type="submit">Save</button>
+</form>
+</body>
+</html>
+```
+employee.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${employee.firstName} + ${ employee.lastName}"></title>
+</head>
+<body>
+<form action="#" th:action="@{/employee/delete}" th:object="${employee}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <h1 th:text="'Full Name: '+ ${employee.firstName} +' '+ ${employee.lastName}"></h1>
+    <p th:text="'EmailId: ' + ${employee.emailId}"></p>
+    <p th:text="'Passport Number: ' + ${employee.passportNumber}"></p>
+    <button><a th:href="@{/employee/edit/{id}(id=${employee.id})}"> Sửa</a></button>
+    
+    <button type="submit">Xóa</button>
+</form>
+</body>
+</html>
+```
+search.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <form action="#" th:action="@{/employee/search}" method="post"
+          novalidate="novalidate" th:object="${searchrequest}" >
+    <input type="text" th:field="*{keyWord}" placeholder="type keyword here"/><br><br>
+    <button type="submit">Search</button>
+</form>
+</body>
+</html>
+```
+### 9: Biên dịch và vào http://localhost:8080/employee
 Kết quả nhận được sẽ như sau
 
-![](images/getAllBooks.jpg)
+![1](img/home.png)
+![1](img/add.png)
+![1](img/edit.png)
+![1](img/search.png)
