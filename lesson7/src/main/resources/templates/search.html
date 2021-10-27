@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
+    <title>Trang Chủ</title>
 </head>
 <body>
+  <div layout:fragment="content" >
     <form action="#" th:action="@{/employee/search}" method="post"
           novalidate="novalidate" th:object="${searchrequest}" >
-    <input type="text" th:field="*{keyWord}" placeholder="type keyword here"/><br><br>
+    <input type="text" th:field="*{keyWord}" placeholder="type keyword here"/>
     <button type="submit">Search</button>
 </form>
+</div>
 </body>
 </html>

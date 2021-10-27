@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADD</title>
+    <title>Trang Chủ</title>
 </head>
 <body>
+  <div layout:fragment="content" >
     <form action="#" th:action="@{/employee/save}" th:object="${employee}" method="post">
         <input type="hidden" placeholder="Id" th:field="*{id}"><br>
         <input type="text" placeholder="First Name" required th:field="*{firstName}"/><br><br>
@@ -15,5 +17,6 @@
         <input type="text" placeholder="Passport Number" required th:field="*{passportNumber}"/><br><br>
         <button type="submit">Save</button>
 </form>
+</div>
 </body>
 </html>

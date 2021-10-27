@@ -1,0 +1,15 @@
+ .navbar-brand{
+    color: blue;
+    background-color: burlywood;
+}
+li {list-style: none;
+    margin-left: 20px;
+    };
+.nav-item a{text-decoration: none};
+
+.mb-lg-0{
+    margin-left: 200px;
+};
+.copyright {
+    margin-left: 100px;
+}
