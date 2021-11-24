@@ -1,0 +1,10 @@
+insert into person (firstName, lastName, email, passport) values ('Tobi', 'Coneron', 'tconeron0@foxnews.com', '1111111111');
+insert into person (firstName, lastName, email, passport) values ('Estel', 'Deards', 'edeards1@rakuten.co.jp', '1111111111');
+insert into person (firstName, lastName, email, passport) values ('Pam', 'Thornton', 'pthornton2@army.mil', '1111111111');
+insert into person (firstName, lastName, email, passport) values ('Robena', 'Dehmel', 'rdehmel3@imageshack.us', '1111111111');
+insert into person (firstName, lastName, email, passport) values ('Yard', 'Ranyelld', 'yranyelld4@freewebs.com', '1111111111');
+insert into person (firstName, lastName, email, passport) values ('Lincoln', 'Da Costa', 'ldacosta5@devhub.com','1111111111');
+insert into person (firstName, lastName, email, passport) values ('Trude', 'Imlaw', 'timlaw6@trellian.com', '1111111111');
+insert into person (firstName, lastName, email, passport) values ('Fidela', 'Pollastrone', 'fpollastrone7@mozilla.com', '1111111111');
+insert into person (firstName, lastName, email, passport) values ('Lion', 'Warner', 'lwarner8@zimbio.com', '1111111111');
+insert into person (firstName, lastName, email, passport) values ('My', 'Scriver', 'mscriver9@angelfire.com','1111111111');
