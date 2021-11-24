@@ -26,13 +26,14 @@
                 <p><a href="/add" class="btn btn-primary"><i class="fas fa-user-plus"></i>Add employee</a>
                 </p>
                 <form th:action="@{/age}">
+                    <label class="title">Name</label><br>
                     <input type="text" placeholder="Search Name" th:field="${request.keyword}" style="width: 200px;">
-                    <br><label class="title">Tuổi tác</label>
+                    <br><label class="title">Age</label>
                     <div><input name="age[min]" type="number" placeholder="min" max="100" th:field="${request.a}" maxlength="2"
                             style="width: 95px;"><b>-</b>
                         <input name="age[max]" type="number" placeholder="max" max="100" th:field="${request.b}" maxlength="2"
                             style="width: 95px;">
-                        <br><button type="submit" class="btn btn-primary" id="btn-search" style="width: 120px;">Search Age</button>
+                        <br><br><button type="submit" class="btn btn-primary" id="btn-search" style="width: 120px;">Search</button>
                     </div>          
                 </form>
                 <table class="table table-striped">
