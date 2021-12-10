@@ -15,7 +15,7 @@ import techmaster.jpaemployee.repository.EmployeeRepository;
 public class EmployeeServiceImp implements EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
-    public List<Employee> emList = new ArrayList<>();
+    // public List<Employee> emList = new ArrayList<>();
     @Override
     public Employee findById(long id) {
         return employeeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("id không tồn tại"));
