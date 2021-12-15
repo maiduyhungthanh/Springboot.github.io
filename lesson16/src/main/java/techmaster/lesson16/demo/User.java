@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,13 +43,6 @@ public class User {
 
     @OneToMany(mappedBy = "userId")
     private List<Comment> comments = new ArrayList<>();
-
-    @Override
-    public String toString(){
-        return id + name + password + email  ;
-    }
-
-
 
     public boolean matchWithKeyWord(String keyword) {
         String lowerKeyWord = keyword.toLowerCase();
